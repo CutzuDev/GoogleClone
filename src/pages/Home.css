@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.home__navbar a {
+  margin: 0px 10px;
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.home__navbar a:hover {
+  text-decoration: underline;
+}
