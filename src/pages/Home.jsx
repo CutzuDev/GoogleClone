@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Avatar } from "@mui/material";
 import GoogleLogo from "../assets/googlelogo.png";
+import Search from "../components/Search";
 
 function Home() {
   return (
@@ -26,6 +27,9 @@ function Home() {
 
       <div className="home__body">
         <img src={GoogleLogo} alt="" />
+        <div className="home__input-container">
+          <Search />
+        </div>
       </div>
     </div>
   );
