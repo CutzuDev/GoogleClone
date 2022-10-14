@@ -45,3 +45,8 @@
   border: none;
   color: #222;
 }
+
+
+.sb__hidden {
+  display: none !important;
+}
