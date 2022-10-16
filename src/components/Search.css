@@ -1,9 +1,12 @@
+.search {
+  margin: 0 auto;
+}
+
 .search__input {
   height: 30px;
   width: 75vw;
   border: 1px solid lightgray;
   padding: 10px 20px;
-  margin-top: 50px;
   max-width: 560px;
   display: flex;
   justify-content: center;
