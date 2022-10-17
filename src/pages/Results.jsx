@@ -81,7 +81,7 @@ function Results() {
           </div>
 
           {data?.items.map((e) => (
-            <div className="test_item" key={e.cacheId}>
+            <div className="test_item" key={e.cacheId + Math.random}>
               {e.title}
             </div>
           ))}
