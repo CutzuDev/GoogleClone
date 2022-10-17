@@ -6,7 +6,13 @@ import Response from "../response";
 import GoogleLogo from "../assets/googlelogo.png";
 import Search from "../components/Search";
 import SearchIcon from "@mui/icons-material/Search";
-import { Description, Image, LocalOffer, MoreVert, Room  } from "@mui/icons-material";
+import {
+  Description,
+  Image,
+  LocalOffer,
+  MoreVert,
+  Room,
+} from "@mui/icons-material";
 
 function Results() {
   const [{ term }, dispatch] = useStateValue();
@@ -50,6 +56,14 @@ function Results() {
               <div className="resultPage__option">
                 <MoreVert />
                 <Link to="/all">More</Link>
+              </div>
+            </div>
+            <div className="resultPage__optionsRight">
+              <div className="resultPage__option">
+                <Link to="/settings">Settings</Link>
+              </div>
+              <div className="resultPage__option">
+                <Link to="/settings">Tools</Link>
               </div>
             </div>
           </div>

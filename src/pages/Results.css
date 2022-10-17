@@ -18,7 +18,7 @@
 .resultPage__header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: sticky;
     top: 0;
     background-color: white;
@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     color: gray;
+    margin-top: 20px;
 }
 
 .resultPage__optionsLeft,
@@ -50,4 +51,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
+}
+
+.resultPage__option a,
+.resultPage__optionsRight a {
+    color: gray;
+}
+
+.resultPage__optionsRight {
+    margin-left: 80px;
 }
