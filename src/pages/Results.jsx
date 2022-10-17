@@ -80,13 +80,11 @@ function Results() {
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </div>
 
-          {data?.items.map((e) => {
-            <div className="test_item">
-              <h1>{e.title}</h1>
-            </div>;
-
-            console.log(e);
-          })}
+          {data?.items.map((e) => (
+            <div className="test_item" key={e.cacheId}>
+              {e.title}
+            </div>
+          ))}
         </div>
       }
     </div>
