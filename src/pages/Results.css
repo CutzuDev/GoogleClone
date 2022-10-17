@@ -59,6 +59,10 @@
     color: gray;
 }
 
+.resultPage__option a {
+    margin-left: 5px;
+}
+
 .resultPage__optionsRight {
     margin-left: 80px;
 }

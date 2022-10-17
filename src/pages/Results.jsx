@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Results.css";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../components/useGoogleSearch";
-import Response from "../response";
+import Response from "../response.js";
 import GoogleLogo from "../assets/googlelogo.png";
 import Search from "../components/Search";
 import SearchIcon from "@mui/icons-material/Search";
@@ -16,11 +16,14 @@ import {
 
 function Results() {
   const [{ term }, dispatch] = useStateValue();
+  // const term = "Tesla";
 
   // LIVE API CALL
   // const { data } = useGoogleSearch(term);
 
   const data = Response;
+
+  const { items } = data;
 
   console.log(data);
   return (
@@ -69,6 +72,23 @@ function Results() {
           </div>
         </div>
       </div>
+
+      {
+        <div className="resultPage__results">
+          <div className="resultPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults} Results (
+            {data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </div>
+
+          {data?.items.map((e) => {
+            <div className="test_item">
+              <h1>{e.title}</h1>
+            </div>;
+
+            console.log(e);
+          })}
+        </div>
+      }
     </div>
   );
 }
