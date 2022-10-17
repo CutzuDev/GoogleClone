@@ -6,6 +6,7 @@ import Response from "../response.js";
 import GoogleLogo from "../assets/googlelogo.png";
 import Search from "../components/Search";
 import SearchIcon from "@mui/icons-material/Search";
+import { v1 as uuidv1 } from "uuid";
 import {
   Description,
   Image,
@@ -16,18 +17,16 @@ import {
 
 function Results() {
   const [{ term }, dispatch] = useStateValue();
+  const tempId = uuidv1();
+  const data = Response;
+
   // const term = "Tesla";
 
   // LIVE API CALL
   // const { data } = useGoogleSearch(term);
 
-  const data = Response;
-
   // const tempFix = "tempFix";
 
-  const { items } = data;
-
-  console.log(data);
   return (
     <div className="resultPage">
       <div className="resultPage__header">
@@ -82,12 +81,11 @@ function Results() {
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </div>
 
-          {data?.items.map((e) =>
-            <div className="test_item" key={e.formattedUrl}>
+          {data?.items.map((e) => (
+            <div className="test_item" key={e.cacheId || tempId}>
               {e.title}
             </div>
-            // console.log(e.formattedUrl)
-          )}
+          ))}
         </div>
       }
     </div>
