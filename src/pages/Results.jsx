@@ -23,6 +23,8 @@ function Results() {
 
   const data = Response;
 
+  // const tempFix = "tempFix";
+
   const { items } = data;
 
   console.log(data);
@@ -80,11 +82,12 @@ function Results() {
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </div>
 
-          {data?.items.map((e) => (
-            <div className="test_item" key={e.cacheId + Math.random}>
+          {data?.items.map((e) =>
+            <div className="test_item" key={e.formattedUrl}>
               {e.title}
             </div>
-          ))}
+            // console.log(e.formattedUrl)
+          )}
         </div>
       }
     </div>
