@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import NotDone from "./pages/NotDone";
 import Results from "./pages/Results";
 
 function App() {
@@ -13,9 +14,6 @@ function App() {
       secondary: {
         main: "#edf2ff",
       },
-      grey: {
-        main: "#808080",
-      },
     },
   });
   return (
@@ -23,9 +21,9 @@ function App() {
       <div>
         <Router>
           <Routes>
-            <Route path="/search" element={<Results />} />
-
             <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Results />} />
+            {/* <Route path="*" element={<NotDone />} /> */}
           </Routes>
         </Router>
       </div>

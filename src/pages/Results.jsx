@@ -18,13 +18,11 @@ import {
 function Results() {
   const [{ term }, dispatch] = useStateValue();
   const tempId = uuidv1();
-  const data = Response;
+  // const data = Response;
 
   // const term = "Tesla";
-
   // LIVE API CALL
-  // const { data } = useGoogleSearch(term);
-
+  const { data } = useGoogleSearch(term);
   // const tempFix = "tempFix";
 
   return (
@@ -74,26 +72,37 @@ function Results() {
         </div>
       </div>
 
-      {
+      {term && (
         <div className="resultPage__results">
           <div className="resultPage__resultCount">
             About {data?.searchInformation.formattedTotalResults} Results (
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </div>
 
-          {data?.items.map((e) => (
-            <div className="test_item" key={e.cacheId || tempId}>
-              {e.title}
+          {data?.items.map((res) => (
+            <div className="result__item" key={res.cacheId || tempId}>
+              <a href={res.link} className="result__sub-title">
+                {res.pagemap?.cse_image?.length > 0 &&
+                  res.pagemap?.cse_image[0]?.src && (
+                    <img
+                      className="result__image"
+                      src={res.pagemap?.cse_image[0]?.src}
+                      alt=""
+                    />
+                  )}
+                <h3>{res.displayLink}</h3>
+              </a>
+              <a href={res.link} className="result__title">
+                <h2>{res.title}</h2>
+              </a>
+
+              <p className="result__snippet">{res.snippet}</p>
             </div>
           ))}
         </div>
-      }
+      )}
     </div>
   );
 }
 
 export default Results;
-
-// AIzaSyB7v5tQC27ZubQkTxH6-4rcC4NPLJQwLv8
-// GET https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures
-// b2c530a3dbf6b4640
