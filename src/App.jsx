@@ -14,6 +14,13 @@ function App() {
       secondary: {
         main: "#edf2ff",
       },
+      customGrey: {
+        main: "#000",
+      },
+      customBlack: {
+        main: "#000",
+        contrastText: "#fff",
+      },
     },
   });
   return (
@@ -23,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Results />} />
-            {/* <Route path="*" element={<NotDone />} /> */}
+            <Route path="*" element={<NotDone />} />
           </Routes>
         </Router>
       </div>

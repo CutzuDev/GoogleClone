@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./Results.css";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../components/useGoogleSearch";
-import Response from "../response.js";
 import GoogleLogo from "../assets/googlelogo.png";
 import Search from "../components/Search";
 import SearchIcon from "@mui/icons-material/Search";
@@ -18,12 +17,9 @@ import {
 function Results() {
   const [{ term }, dispatch] = useStateValue();
   const tempId = uuidv1();
-  // const data = Response;
 
-  // const term = "Tesla";
-  // LIVE API CALL
   const { data } = useGoogleSearch(term);
-  // const tempFix = "tempFix";
+
 
   return (
     <div className="resultPage">

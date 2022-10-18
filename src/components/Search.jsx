@@ -2,7 +2,7 @@ import "./Search.css";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
@@ -25,10 +25,6 @@ function Search({ hideButtons = false }) {
     });
   };
 
-  // useEffect(() => {
-  //   console.log(search);
-  // }, [search]);
-
   return (
     <form className="search">
       <div className="search__input">
@@ -43,11 +39,11 @@ function Search({ hideButtons = false }) {
             type="submit"
             onClick={searchButton}
             variant="outlined"
-            color="grey"
+            color="customGrey"
           >
             Google Search
           </Button>
-          <Button variant="outlined" color="grey">
+          <Button variant="outlined" color="customGrey">
             I'm Feeling Lucky
           </Button>
         </div>
@@ -57,7 +53,7 @@ function Search({ hideButtons = false }) {
             type="submit"
             onClick={searchButton}
             variant="outlined"
-            color="grey"
+            color="customGrey"
           >
             Google Search
           </Button>
@@ -65,7 +61,7 @@ function Search({ hideButtons = false }) {
             type="submit"
             onClick={searchButton}
             variant="outlined"
-            color="grey"
+            color="customGrey"
           >
             I'm Feeling Lucky
           </Button>
